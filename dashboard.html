@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="Assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="Assets/css/bootadmin.min.css">
+
+    <title>A Taste</title>
+
+    <style>
+        /* MAKE TABLE RESPONSIVE */
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+          }
+
+        .table td {
+        text-align: center;   
+        }
+
+        .table th {
+        text-align: center;   
+        }
+
+        .table thead th{
+            border-bottom:none;
+            background-color: #5C9BD1;
+            color:white;
+        }
+          
+        .table td, .table th{
+            border:none;
+        }
+
+          th, td {
+            text-align: left;
+            padding: 8px;
+          }
+          
+          tr:nth-child(even){background-color: #f2f2f2}
+
+        /* AVATAR */
+        .avatar {
+        vertical-align: middle;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        }
+
+        /* PAGINATION */
+        .pagination {
+        display: inline-block;
+        }
+
+        .pagination a {
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background-color .3s;
+        }
+
+        .pagination a.active {
+        background-color: #4CAF50;
+        color: white;
+        }
+
+        /* ACTIVE UL */
+        .ulactive { background-color: #32C5D2 !important;  }
+    </style>
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-expand navbar-dark bg-primary">
+    <a class="sidebar-toggle mr-3" href="#"><i class="fa fa-bars"></i></a>
+    <a class="navbar-brand" href="#">A Taste Portal System</a>
+
+    <div class="navbar-collapse collapse">
+        <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                        <a href="#" id="dd_user" class="nav-link dropdown-toggle" data-toggle="dropdown" ><i class="fa fa-bell" style="margin-right:5px;"></i> Notifs</a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd_user">
+                            <a href="#" class="dropdown-item">New Orders : 1</a>
+                        </div>
+                    </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="d-flex">
+    <div class="sidebar sidebar-dark bg-dark">
+        <ul class="list-unstyled">
+            <li>
+                <a href="#sm_expand_1" data-toggle="collapse"  >
+                    <i class="fa fa-fw fa-tachometer-alt" style="margin-right:8px;"></i> Dashboard
+                </a>
+                <ul id="sm_expand_1" class="list-unstyled"  >
+                    <li><a href="index.html" > Today's Agenda</a></li>
+                    <li><a href="dashboard.html" class="ulactive" selected> Overall Sales </a></li>
+                </ul>
+            </li>
+
+            <!-- <li><a href="#"><i class="fa fa-fw fa-link"></i> PENDING (ORDERS)</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-link"></i> PENDING (ADD ITEM)</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-link"></i> PENDING (PROFIT)</a></li> -->
+        </ul>
+    </div>
+
+    <!-- START CONTENT -->
+    <div class="content p-4">
+        <h4>Overall Sales</h4>
+
+        
+
+    </div>
+    <!-- END CONTENT -->
+</div>
+
+<script src="Assets/js/jquery.min.js"></script>
+<script src="Assets/js/bootstrap.bundle.min.js"></script>
+<script src="Assets/js/bootadmin.min.js"></script>
+
+<script src="main.js"></script>
+
+
+</body>
+</html>

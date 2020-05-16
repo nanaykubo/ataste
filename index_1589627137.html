@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="Assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="Assets/css/bootadmin.min.css">
+
+    <title>A Taste</title>
+
+    <style>
+        /* MAKE TABLE RESPONSIVE */
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+          }
+
+        .table td {
+        text-align: center;   
+        }
+
+        .table th {
+        text-align: center;   
+        }
+
+        .table thead th{
+            border-bottom:none;
+            background-color: #5C9BD1;
+            color:white;
+        }
+          
+        .table td, .table th{
+            border:none;
+        }
+
+          th, td {
+            text-align: left;
+            padding: 8px;
+          }
+          
+          tr:nth-child(even){background-color: #f2f2f2}
+
+        /* AVATAR */
+        .avatar {
+        vertical-align: middle;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        }
+
+        /* PAGINATION */
+        .pagination {
+        display: inline-block;
+        }
+
+        .pagination a {
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background-color .3s;
+        }
+
+        .pagination a.active {
+        background-color: #4CAF50;
+        color: white;
+        }
+
+tr.strikeout td{
+    color:red;
+}
+td { position: relative; }
+
+tr.strikeout td:before {
+  content: " ";
+  position: absolute;
+  top: 45%;
+  left: 0;
+  border-bottom: 1px solid red;
+  width: 100%;
+}
+
+tr.strikeout td:after {
+  font-size: 1px;
+}
+
+.custom-checkbox {
+  min-height: 1rem;
+  padding-left: 0;
+  margin-right: 0;
+  cursor: pointer; 
+}
+  .custom-checkbox .custom-control-indicator {
+    content: "";
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 10px;
+    background-color: #818181;
+    border-radius: 15px;
+    margin-right: 10px;
+    -webkit-transition: background .3s ease;
+    transition: background .3s ease;
+    vertical-align: middle;
+    margin: 0 16px;
+    box-shadow: none; 
+  }
+    .custom-checkbox .custom-control-indicator:after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      background-color: #f1f1f1;
+      border-radius: 21px;
+      box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4);
+      left: -2px;
+      top: -4px;
+      -webkit-transition: left .3s ease, background .3s ease, box-shadow .1s ease;
+      transition: left .3s ease, background .3s ease, box-shadow .1s ease; 
+    }
+  .custom-checkbox .custom-control-input:checked ~ .custom-control-indicator {
+    background-color: #84c7c1;
+    background-image: none;
+    box-shadow: none !important; 
+  }
+    .custom-checkbox .custom-control-input:checked ~ .custom-control-indicator:after {
+      background-color: #84c7c1;
+      left: 15px; 
+    }
+  .custom-checkbox .custom-control-input:focus ~ .custom-control-indicator {
+    box-shadow: none !important; 
+  }
+        /* ACTIVE UL */
+        .ulactive { background-color: #32C5D2 !important;  }
+    </style>
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-expand navbar-dark bg-primary">
+    <a class="sidebar-toggle mr-3" href="#"><i class="fa fa-bars"></i></a>
+    <a class="navbar-brand" href="#">A Taste Portal System</a>
+
+    <div class="navbar-collapse collapse">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a href="#" id="dd_user" class="nav-link dropdown-toggle" data-toggle="dropdown" ><i class="fa fa-bell" style="margin-right:5px;"></i> Notifs</a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd_user">
+                    <a href="#" class="dropdown-item">New Orders : 1</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="d-flex">
+    <div class="sidebar sidebar-dark bg-dark">
+        <ul class="list-unstyled">
+            <li>
+                <a href="#sm_expand_1" data-toggle="collapse"  >
+                    <i class="fa fa-fw fa-tachometer-alt" style="margin-right:8px;"></i> Dashboard
+                </a>
+                <ul id="sm_expand_1" class="list-unstyled"  >
+                    <li><a href="index.html" class="ulactive" selected> Today's Agenda</a></li>
+                    <li><a href="dashboard.html" > Overall Sales </a></li>
+                </ul>
+            </li>
+
+            <!-- <li><a href="#"><i class="fa fa-fw fa-link"></i> PENDING (ORDERS)</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-link"></i> PENDING (ADD ITEM)</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-link"></i> PENDING (PROFIT)</a></li> -->
+        </ul>
+    </div>
+
+    <!-- START CONTENT -->
+    <div class="content p-4">
+        <h4 >Today's Agenda</h4>
+
+            <!-- START CARDS -->
+        <div class="row mt-4 mb-4">
+                <div class="col-md-6">
+                        <div class="d-flex border">
+                            <div class="bg-primary text-light p-4">
+                                <div class="d-flex align-items-center h-100">
+                                    <i class="fa fa-3x fa-fw fas fa-shopping-cart"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 bg-white p-4">
+                                <p class="text-uppercase text-secondary mb-0">TOTAL ORDERS</p>
+                                <h3 class="font-weight-bold mb-0">7</h3>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-6">
+                        <div class="d-flex border">
+                            <div class="bg-warning text-light p-4">
+                                <div class="d-flex align-items-center h-100">
+                                    <i class="fa fa-3x fa-fw fas fa-dollar-sign"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 bg-white p-4">
+                                <p class="text-uppercase text-secondary mb-0">TOTAL SALES</p>
+                                <h3 class="font-weight-bold mb-0">10,000</h3>
+                            </div>
+                        </div>
+                </div>
+        </div>
+            <!-- END CARDS -->
+
+            
+
+        <!-- START STOCKS -->
+        <h4>Stocks Left</h4>
+        <div class="row mt-3 mb-4">
+        <div class="col-md-6">
+                <div class="d-flex border">
+        <div class="flex-grow-1 bg-white p-4 text-center">
+            <p class="text-uppercase text-secondary mb-0">CHILI GARLIC REGULAR</p>
+            <h3 class="font-weight-bold mb-0">24</h3>
+            </div>
+        </div>
+    </div>
+
+        <div class="col-md-6">
+                <div class="d-flex border">
+        <div class="flex-grow-1 bg-white p-4 text-center">
+        <p class="text-uppercase text-secondary mb-0">CHILI GARLIC EXTRA SPICY</p>
+        <h3 class="font-weight-bold mb-0"></i>24</h3>
+        </div>
+        </div>
+    </div>
+        </div>
+        <!-- END STOCKS -->
+
+        <!-- START STOCKS -->
+        <h4>Track Orders</h4>
+        <div class="row mt-3 mb-4">
+            <table class="table table-borderless" id="myTable">
+                    <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Item Ordered</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col">Payment</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row"><img src="Assets/img/Jorene.jpg" alt="Jorene" class="avatar"></th>
+                        <td>Chili Garlic Extra Spicy</td>
+                        <td>7</td>
+                        <td><span class="badge badge-success">Paid</span></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><img src="Assets/img/Angel.jpg" alt="Angel" class="avatar"></th>
+                        <td>Chili Garlic Extra Spicy</td>
+                        <td>7</td>
+                        <td><span class="badge badge-warning" style="color:white;">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><img src="Assets/img/Jed.jpg" alt="Jed" class="avatar"></th>
+                        <td>Chili Garlic Extra Spicy</td>
+                        <td>7</td>
+                        <td><span class="badge badge-success">Paid</span></td>
+                    </tr>
+                    <tr>
+                            <th scope="row"><img src="Assets/img/Jed.jpg" alt="Jed" class="avatar"></th>
+                            <td>Chili Garlic Extra Spicy</td>
+                            <td>7</td>
+                            <td><span class="badge badge-success">Paid</span></td>
+                    </tr>
+                    <tr>
+                    <th scope="row"><img src="Assets/img/Jed.jpg" alt="Jed" class="avatar"></th>
+                    <td>Chili Garlic Extra Spicy</td>
+                    <td>7</td>
+                    <td><span class="badge badge-success">Paid</span></td>
+                    </tr>
+                    <tr>
+                    <th scope="row"><img src="Assets/img/Jed.jpg" alt="Jed" class="avatar"></th>
+                    <td>Chili Garlic Extra Spicy</td>
+                    <td>7</td>
+                    <td><span class="badge badge-success">Paid</span></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><img src="Assets/img/Jed.jpg" alt="Jed" class="avatar"></th>
+                        <td>Chili Garlic Extra Spicy</td>
+                        <td>7</td>
+                        <td><span class="badge badge-success">Paid</span></td>
+                    </tr>
+                    <tr>
+                            <th scope="row"><img src="Assets/img/Jed.jpg" alt="Jed" class="avatar"></th>
+                            <td>Chili Garlic Extra Spicy</td>
+                            <td>7</td>
+                            <td><span class="badge badge-success">Paid</span></td>
+                    </tr>     
+                    </tbody>
+                </table>
+        </div>
+        <!-- END STOCKS -->
+
+                <!-- START PENDING DELIVERY -->
+                <h4>Pending Delivery</h4>
+                <div class="row mt-3 mb-4">
+                    <table class="table table-borderless" id="myTable1">
+                            <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Item Ordered</th>
+                                <th scope="col">Qty</th>
+                                <th scope="col">Payment</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <label class="custom-control custom-checkbox">                                     
+                                        <input type="checkbox" class="custom-control-input">                                     
+                                        <span class="custom-control-indicator"></span>                                 
+                                    </label>
+                                </td>
+                                <td>Chili Garlic Extra Spicy</td>
+                                <td>7</td>
+                                <td><span class="badge badge-success">Paid</span></td>
+                            </tr>
+                            <tr class="strikeout">
+                                <td>
+                                    <label class="custom-control custom-checkbox">                                     
+                                        <input type="checkbox" class="custom-control-input">                                     
+                                        <span class="custom-control-indicator"></span>                                 
+                                    </label>
+                                </td>
+                                <td>Chili Garlic Extra Spicy</td>
+                                <td>7</td>
+                                <td><span class="badge badge-warning" style="color:white;">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="custom-control custom-checkbox">                                     
+                                        <input type="checkbox" class="custom-control-input">                                     
+                                        <span class="custom-control-indicator"></span>                                 
+                                    </label>
+                                </td>
+                                <td>Chili Garlic Extra Spicy</td>
+                                <td>7</td>
+                                <td><span class="badge badge-success">Paid</span></td>
+                            </tr>
+                            <tr class="strikeout">
+                                    <td>
+                                        <label class="custom-control custom-checkbox">                                     
+                                            <input type="checkbox" class="custom-control-input">                                     
+                                            <span class="custom-control-indicator"></span>                                 
+                                        </label>
+                                    </td>
+                                    <td>Chili Garlic Extra Spicy</td>
+                                    <td>7</td>
+                                    <td><span class="badge badge-success">Paid</span></td>
+                            </tr> 
+                            </tbody>
+                        </table>
+                </div>
+                <!-- END PENDING DELIVERY -->
+
+    </div>
+    <!-- END CONTENT -->
+</div>
+
+<script src="Assets/js/jquery.min.js"></script>
+<script src="Assets/js/bootstrap.bundle.min.js"></script>
+<script src="Assets/js/bootadmin.min.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
